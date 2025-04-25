@@ -8,7 +8,7 @@ These scripts leverage Human Interface Device (HID) capabilities to inject keyst
 
 **Tested Operating Systems:**
 
-* ✅ **Windows:** These scripts have been specifically tested and confirmed to function correctly on Windows operating systems.
+* ✅ **Windows:** These scripts have been specifically tested and confirmed to function correctly on Windows operating systems with an Italian keyboard layout.
 
 **Untested/Incompatible Operating Systems:**
 
@@ -20,13 +20,13 @@ These scripts leverage Human Interface Device (HID) capabilities to inject keyst
 * **HID Injection Dependency:** These scripts rely on HID (Human Interface Device) injection. Their functionality is entirely dependent on the target system interpreting the USB device as a keyboard and processing the injected keystrokes.
 * **DELAY Calibration is Crucial:** The `DELAY` commands within these scripts are critical for their proper execution. You **must recalibrate** these delay values based on the expected speed of the target machine in opening applications, executing commands, and processing input. A machine that is slow, under heavy load, or has different animation settings will require adjusted delays for the scripts to function reliably. Insufficient delays may lead to the script failing to navigate the interface correctly.
 * **Potential Security Measures:** On certain computers equipped with security software that monitors USB device input or implements protections against HID injection attacks, these scripts **may not function as intended or may be detected and blocked**. Similarly, systems employing mechanisms for verifying newly inserted USB drives might prevent the scripts from executing automatically or at all.
-* **RAW_HID for Keyboard Layout Customization:** Some of the scripts in this repository are written using the `RAW_HID` function. This is essential for customizing the scripts to the specific keyboard layout of the target machine being emulated. In these particular cases, the scripts are configured for **Italian keyboard layouts**.
-* **Default USB Army Knife Layout and Localization:** The base "USB Army Knife" firmware typically utilizes a **United States (US) keyboard layout**. When executing standard `STRING` commands (e.g., `STRING http://192.168.1.1:8080`) on target keyboards with different layouts (like Italian), characters such as `/` or `:` might be omitted or replaced with other symbols due to the layout mismatch.
-* **Resolving Layout Issues with RAW_HID:** To overcome these layout discrepancies, `RAW_HID` is employed. This involves testing various hexadecimal codes to identify the correct code corresponding to the desired symbol on the target keyboard layout. This trial-and-error process allows for precise injection of characters regardless of the default firmware layout.
+* **RAW_HID for Italian Keyboard Layout:** Some of the scripts in this repository are written using the `RAW_HID` function, which is essential for precise control over the emulated keyboard layout. These particular scripts are specifically configured and tested for **Italian keyboard layouts**.
+* **US Firmware Layout and Character Mapping:** The base "USB Army Knife" firmware typically utilizes a **United States (US) keyboard layout**. Due to the differences between the US and Italian keyboard layouts, you might observe seemingly strange or incorrect symbols within the `.ds` script files when viewed directly. This is because certain characters that have different physical key positions or require modifier keys (like Shift or AltGr) in the Italian layout might correspond to different, but visually similar, characters in the US layout.
+* **Example of Character Mapping:** For instance, the forward slash `/` character, which is often located on a different key in the Italian layout compared to the US layout, might be represented by the hyphen `-` character (or another symbol) within the `.ds` file. This is intentional, as the `RAW_HID` codes used in the script are specifically chosen to produce the correct Italian symbol when the HID input is processed by a system with an Italian keyboard layout. Therefore, trust that the seemingly misplaced symbols in the code are correctly mapped for Italian keyboards.
 
 **Usage:**
 
-Refer to the `README.md` file within each individual script's folder for specific instructions and details on its functionality, including whether the script utilizes standard `STRING` commands or `RAW_HID` for keyboard layout compatibility.
+Refer to the `README.md` file within each individual script's folder for specific instructions and details on its functionality, including whether the script utilizes standard `STRING` commands or `RAW_HID` for keyboard layout compatibility. **Pay close attention to the intended target keyboard layout mentioned in each script's README.**
 
 **Ethical and Legal Considerations:**
 
