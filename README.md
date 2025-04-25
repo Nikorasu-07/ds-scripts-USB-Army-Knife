@@ -28,6 +28,12 @@ These scripts leverage Human Interface Device (HID) capabilities to inject keyst
 
 Refer to the `README.md` file within each individual script's folder for specific instructions and details on its functionality, including whether the script utilizes standard `STRING` commands or `RAW_HID` for keyboard layout compatibility. **Pay close attention to the intended target keyboard layout mentioned in each script's README.**
 
+## USB Army Knife Firmware
+
+The firmware required to utilize the DuckyScript payloads in this repository can be downloaded from the official USB Army Knife repository: [https://github.com/i-am-shodan/USBArmyKnife.git](https://github.com/i-am-shodan/USBArmyKnife.git).
+
+Within that repository, you will also find further examples, documentation, and potential additional uses for the USB Army Knife firmware beyond the scope of these DuckyScript files.
+
 **Ethical and Legal Considerations:**
 
 Please remember to use these scripts responsibly and ethically. They are intended for use in **authorized testing environments** or **professional engagements** where you have explicit permission to assess the security of systems. **Unauthorized use of these scripts on systems you do not own or have permission to test is illegal and unethical.**
